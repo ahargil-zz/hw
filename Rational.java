@@ -11,7 +11,8 @@ public class Rational{
   ======================================================================================*/
   
   public Rational() {
-    Rational(0, 1);
+    _num = 0;
+    _den = 1;
   }
   
   /*======================================================================================
@@ -20,7 +21,7 @@ public class Rational{
   if an invalid denominator is attempted, should print a message and set the number to 0/1
   ======================================================================================*/
   
-  public Rational(num, den) {
+  public Rational(int num, int den) {
     if (den == 0) {
       System.out.println("Zero is an invalid denomenator");
       _num = 0;
@@ -42,6 +43,7 @@ public class Rational{
     ret += _num;
     ret += "/";
     ret += _den;
+    return ret; 
   }
   
   public static void main( String[] args ) {
