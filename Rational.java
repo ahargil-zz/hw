@@ -1,3 +1,8 @@
+//Anya Hargil
+//pd 9
+//HW27
+//2013-11-18
+
 public class Rational{
 
   /*======================================================================================
@@ -109,7 +114,7 @@ public class Rational{
   ========================================================================================*/
   
   public int gcd() {
-    return gcd(Math.max(_num, _den), Math.min(_num, _den));
+      return gcd(_num, _den);
   }
   
   /*========================================================================================
@@ -117,10 +122,10 @@ public class Rational{
   Changes this Rational to one in reduced form (should use gcd)
   ========================================================================================*/
   
-  public void reduce(Rational rat) {
-    int gcd = gcd(rat._num, rat._den);
-    rat._num /= gcd;
-    rat._den /= gcd;
+  public void reduce() {
+    int gcd = this.gcd();
+    this._num /= gcd;
+    this._den /= gcd;
   }
   
   /*========================================================================================
@@ -171,5 +176,18 @@ public class Rational{
     System.out.println(r);
     System.out.println("In decimal form " + r + " is " + r.floatValue());
     System.out.println("In decimal form " + s + " is " + s.floatValue());
+    System.out.print(r + " plus " + s + " is "); 
+    r.add(s); //Adds r to s, changes r to 14/12.  s remains ½
+    System.out.println(r);
+    System.out.print(r + " minus " + s + " is ");
+    r.subtract(s); //Subtracts s from r, changes r to 16/24.  s remains ½
+    System.out.println(r);
+    System.out.println("The greastest common factor of " + r._num + " and " + r._den + " is " + r.gcd());
+    System.out.print("The reduced form of " + r + " is ");
+    r.reduce();
+    System.out.println(r);
+    System.out.println(r.compareTo(s));
+    System.out.println(s.compareTo(r));
+    System.out.println(s.compareTo(s));
   }
 }
