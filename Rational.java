@@ -150,15 +150,18 @@ public class Rational{
   ========================================================================================*/
   
   public int compareTo(Rational rat) {
-    if (this.floatValue() == rat.floatValue()) {
-      return 0;
-    }
-    else if (this.floatValue() > rat.floatValue()) {
-      return 1;
-    }
-    else {
-      return -1;
-    }
+      Integer x = this._num * rat._den;
+      Integer y = this._den * rat._num;
+      return x.compareTo(y);
+  }
+  
+  /*========================================================================================
+  equals
+  Overrides equals method inherited from Object superclass
+  ========================================================================================*/
+  
+  public boolean equals(Rational rat) {
+    return this.compareTo(rat) == 0;
   }
   
   public static void main( String[] args ) {
